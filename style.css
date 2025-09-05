@@ -7,14 +7,16 @@ body {
   padding: 20px;
   background: #ffff;
   color: #ffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.74)
 }
 
 h1 {
-  margin-bottom: 30px;
-  color: #ffff;
+  margin-bottom: 20px;
+  color:#fceb00 ;
   font-family: 'Montserrat', serif;
   font-weight: 900;
-  font-size: 40px;
+  font-size: 45px;
+  text-shadow: 2px 2px 4px rgba(255, 250, 250, 0.349)
 }
 .button-container {
   display: grid;
@@ -31,8 +33,8 @@ h1 {
   font-size: 8px;
   font-weight: bold;
   color: white;
-  background: #880505;
-  border-radius: 8px;
+  background: #03aeb4;
+  border-radius: 50px;
   text-decoration: none;
   transition: all 0.3s ease;
   margin: 1px;
@@ -67,8 +69,10 @@ h1 {
   height: 100%;
   object-fit: cover;
   z-index: -1; 
+  
 }
 .whole-container{
     padding-top: 100px;
 }
 }
+
