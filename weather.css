@@ -60,3 +60,21 @@ body {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+.home-btn {
+  position: fixed;
+  top: 0;
+  left: 0px;
+  padding: 12px;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(228, 228, 243);
+  text-decoration: none;
+  z-index: 1000; 
+  animation: pulseZoom 1.5s infinite;
+}
+
+@keyframes pulseZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
