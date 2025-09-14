@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dupax del Sur Tourism</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', Arial, sans-serif;
+      height: 100vh;
+    }
+
+    .back-button {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background: rgba(24, 22, 22, 0.5);
+        color: #3dd37b;
+        border: none;
+        padding: 8px 12px;
+        font-size: 16px;
+        border-radius: 6px;
+        z-index: 9999;
+        transition: background 0.3s;
+        font-family: 'Montserrat', Arial, sans-Serif;
+}
+
+.back-button:hover {
+  background: rgba(0,0,0,0.7);
+  color: #3dd37b;
+}
+
+    .img1 {
+      width: 300px;
+      padding: 20px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.3); 
+      border-radius: 10px; 
+    }
+
+    .img1 img {
+      filter: brightness(0) saturate(100%) invert(16%) sepia(68%) saturate(1001%) hue-rotate(149deg) brightness(36%) contrast(89%);
+      width: 100%;
+      height: auto;
+    }
+
+  </style>
+</head>
+<body>
+    <button class="back-button" onclick="history.back()">← Back</button>
+  <div class="img1">
+    <img src="emergency hotlines.png" alt="Emergency Hotlines">
+  </div>
+</body>
+</html>

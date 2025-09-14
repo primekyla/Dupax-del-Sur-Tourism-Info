@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dupax del Sur Tourism</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+  <div class="whole-container">
+    
+    <div class="nav-menu">
+      <div class="dropdown">
+        <span id="menuIcon" class="material-symbols-outlined dropbtn" onclick="toggleMenu()">menu</span>
+        <div class="dropdown-content" id="dropdownMenu">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tourismdupaxdelsur@gmail.com&su=Tourism%20Inquiry&body=Hello,%20I%20would%20like%20to%20ask%20about..." target="_blank">
+            Contact Us
+          </a>
+          <a href="https://forms.gle/sRJymmSpotJFxFds7" target="_blank">Feedback</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-container">
+      <img class="background-img" src="bgimg.jpg" alt="Dupax del Sur Scenery">
+      <div class="overlay"></div>
+      <a href="explore.html" class="btn">EXPLORE NOW</a>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      const icon = document.getElementById("menuIcon");
+      menu.classList.toggle("show");
+      icon.classList.toggle("rotate");
+
+      icon.textContent = menu.classList.contains("show") ? "close" : "menu";
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.closest('.dropdown')) {
+        const menu = document.getElementById("dropdownMenu");
+        const icon = document.getElementById("menuIcon");
+        menu.classList.remove("show");
+        icon.textContent = "menu";
+        icon.classList.remove("rotate");
+      }
+    }
+  </script>
+</body>
+</html>

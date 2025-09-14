@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dupax del Sur Tourism</title>
+  <link rel="stylesheet" href="sites.css">
+</head>
+<body>
+
+  <div class="carousel-container">
+   
+    <div class="gradient-overlay"></div>
+
+
+    <button class="back-button" onclick="history.back()">← Back</button>
+
+ 
+    <div class="carousel" id="carousel">
+      <img src="catanan1.jpg" alt="Image 1">
+      <img src="catanan.jpg" alt="Image 2">
+      <img src="catanan3.jpg" alt="Image 3">
+    </div>
+
+    <div class="overlay-text">Catanan Falls</div>
+    <div class="dots" id="dots"></div>
+  </div>
+
+
+  <div class="bottom-bg"></div>
+  <div class="description">
+    <div class="title">A Closer Look</div>
+    <p>Located in the forested landscapes of Banila, Dupax del Sur, Catanan Falls is a serene natural escape that rewards visitors with its refreshing cascade and tranquil surroundings. The falls pour gracefully into a cool basin, perfect for a rejuvenating dip after a scenic trek. Surrounded by lush greenery and the soothing sounds of nature, the area offers a peaceful retreat for adventurers, nature lovers, and those seeking quiet moments away from the bustle of town life.</p>
+  </div>
+
+ <div class="icon-bar">
+  <img src="dish.png" alt="icon1">
+  <img src="environment.png" alt="icon2">
+  <img src="picnic.png" alt="icon3">
+  <img src="binocular.png" alt="icon4">
+ </div>
+ <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6900.249533064569!2d121.13667149999999!3d16.178804799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3390f75c27894613%3A0xf7dc931bb9d5d62!2sBanila%20Water%20Falls!5e1!3m2!1sen!2sph!4v1757726213095!5m2!1sen!2sph" 
+    width="100%" 
+    height="350" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+  <script>
+  const carousel = document.getElementById("carousel");
+  const images = carousel.querySelectorAll("img");
+  const dotsContainer = document.getElementById("dots");
+
+  let index = 0;
+
+  images.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      index = i;
+      updateCarousel();
+      resetAutoSlide(); 
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  function updateCarousel() {
+    carousel.style.transform = `translateX(${-index * 100}%)`;
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+  }
+
+  function nextSlide() {
+    index = (index + 1) % images.length; 
+    updateCarousel();
+  }
+
+  let autoSlide = setInterval(nextSlide, 3000);
+
+  function resetAutoSlide() {
+    clearInterval(autoSlide);
+    autoSlide = setInterval(nextSlide, 3000);
+  }
+</script>
+
+
+</body>
+</html>

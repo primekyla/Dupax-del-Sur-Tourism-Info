@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dupax del Sur Tourism</title>
+  <link rel="stylesheet" href="sites.css">
+</head>
+<body>
+
+  <div class="carousel-container">
+   
+    <div class="gradient-overlay"></div>
+
+
+    <button class="back-button" onclick="history.back()">← Back</button>
+
+ 
+    <div class="carousel" id="carousel">
+      <img src="carolotan1.jpg" alt="Image 1">
+      <img src="carolotan2.jpg" alt="Image 2">
+      <img src="carolotan3.jpg" alt="Image 3">
+    </div>
+
+    <div class="overlay-text">Carolotan Falls</div>
+    <div class="dots" id="dots"></div>
+  </div>
+
+
+  <div class="bottom-bg"></div>
+  <div class="description">
+    <div class="title">A Closer Look</div>
+    <p>Carolotan Falls is a natural wonder tucked within the lush landscapes of Dupax del Sur. Cascading gracefully into a cool basin, the falls offer a refreshing retreat for nature lovers and adventurers alike. Surrounded by verdant forests and tranquil scenery, it provides the perfect setting for swimming, picnics, and quiet relaxation. Its unspoiled beauty and soothing waters make Carolotan Falls not just a tourist spot, but also a peaceful escape where visitors can reconnect with nature.</p>
+  </div>
+
+  <div class="icon-bar">
+  <img src="dish.png" alt="icon1">
+  <img src="environment.png" alt="icon2">
+  <img src="picnic.png" alt="icon3">
+  <img src="binocular.png" alt="icon4">
+ </div>
+ <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6899.040190321349!2d121.14050835371017!3d16.213380386887216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3390f7001ddceff1%3A0x69cbbe9c3c7b6f43!2sCarolotan%20Falls!5e1!3m2!1sen!2sph!4v1757685403619!5m2!1sen!2sph" 
+    width="100%" 
+    height="350" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  
+  <script>
+  const carousel = document.getElementById("carousel");
+  const images = carousel.querySelectorAll("img");
+  const dotsContainer = document.getElementById("dots");
+
+  let index = 0;
+
+  images.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      index = i;
+      updateCarousel();
+      resetAutoSlide(); 
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  function updateCarousel() {
+    carousel.style.transform = `translateX(${-index * 100}%)`;
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+  }
+
+  function nextSlide() {
+    index = (index + 1) % images.length; 
+    updateCarousel();
+  }
+
+  let autoSlide = setInterval(nextSlide, 3000);
+
+  function resetAutoSlide() {
+    clearInterval(autoSlide);
+    autoSlide = setInterval(nextSlide, 3000);
+  }
+</script>
+
+</body>
+</html>

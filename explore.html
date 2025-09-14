@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dupax del Sur</title>
+  <link rel="stylesheet" href="explore.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">Dupax del Sur</a>
+
+    <div class="logbook">
+    <a href="https://tourismdds.unaux.com/" target="_blank"> <i class="fa-solid fa-book-open"></i> </a> 
+      <span>Logbook</span>
+    </div>
+
+    <div class="menu-container">
+      <i id="menuIcon" class="fa-solid fa-bars"></i>
+      <div class="dropdown">
+        <a href="municipal.html">Municipal Officials</a>
+        <a href="blgu.html">Barangay Officials</a>
+        <a href="emergency.html">Emergency Hotlines</a>
+        <a href="brochures.html">Download Brochures</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="top-nav">
+    <div class="nav-item">
+      <i class="fa-solid fa-location-dot"></i>
+      <a href="wheretogo.html"><span>Where to go?</span></a>
+    </div>
+    <div class="nav-item">
+      <i class="fa-solid fa-utensils"></i>
+     <a href="wheretoeat.html"><span>Where to eat?</span></a> 
+    </div>
+    <div class="nav-item">
+      <i class="fa-solid fa-cloud-sun"></i>
+     <a href="weather.html"> <span>What's the weather?</span> </a>
+    </div>
+    <div class="nav-item">
+      <i class="fa-solid fa-landmark"></i>
+     <a href="history.html"><span>History</span></a> 
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="text-head">
+      <p>TOP DESTINATIONS</p>
+  </div>
+  <div class="photo-grid">
+    <a href="church.html" class="photo-card">
+      <img src="church1.jpg" alt="St. Vincent Ferrer">
+      <div class="caption">St. Vincent Ferrer</div>
+    </a>
+    <a href="carolotanfalls.html" class="photo-card">
+      <img src="carolotan1.jpg" alt="Carolotan Falls">
+      <div class="caption">Carolotan Falls</div>
+    </a>
+    <a href="sitio.html" class="photo-card">
+      <img src="sitio1.jpg" alt="Sitio de Victoria">
+      <div class="caption">Sitio de Victoria</div>
+    </a>
+    <a href="dampol.html" class="photo-card">
+      <img src="dampol1.jpg" alt="Dampol Bridge">
+      <div class="caption">Dampol Bridge</div>
+    </a>
+  </div>
+    <div class="text-head">
+        <p>TOP PLACES TO EAT</p>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <img src="canto1.jpg" alt="Photo 1">
+        <div class="caption">Canto Box</div>
+      </div>
+      <div class="photo-card">
+        <img src="mavves1.jpg" alt="Photo 2">
+        <div class="caption">Mavves Paluto</div>
+      </div>
+      <div class="photo-card">
+        <img src="green1.jpg" alt="Photo 3">
+        <div class="caption">The Green Oasis of Dupax</div>
+      </div>
+      <div class="photo-card">
+        <img src="jasper1.jpg" alt="Photo 4">
+        <div class="caption">Jasper's Pancitan</div>
+      </div>
+    </div>
+  </main>
+
+
+  <script>
+    const menuIcon = document.getElementById("menuIcon");
+    const dropdown = document.querySelector(".dropdown");
+
+    menuIcon.addEventListener("click", () => {
+      dropdown.classList.toggle("show");
+      menuIcon.classList.toggle("open");
+
+      if (menuIcon.classList.contains("open")) {
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-xmark");
+      } else {
+        menuIcon.classList.remove("fa-xmark");
+        menuIcon.classList.add("fa-bars");
+      }
+    });
+  </script>
+
+</body>
+</html>

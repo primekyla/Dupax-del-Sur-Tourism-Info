@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dupax del Sur Tourism</title>
+  <link rel="stylesheet" href="wheretoeat.css">
+</head>
+<body>
+<button class="back-button" onclick="history.back()">← Back
+     </button>
+  <h1>Discover the Flavors of Dupax del Sur</h1>
+  <h2>Feel the taste, love the place.</h2>
+
+  <div class="grid">
+    <div class="card">
+      <div class="image-container">
+        <img src="canto1.jpg" alt="Meal 1" class="slide active">
+        <img src="canto2.jpg" alt="Meal 2" class="slide">
+        <img src="canto3.jpg" alt="Meal 3" class="slide">
+      </div>
+      <h3>Canto Box</h3>
+      <p>Brgy. Domang</p>
+      <span>Dupax del Sur</span>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <img src="campanadish1.jpg" alt="Meal 1" class="slide active">
+        <img src="campanadish2.jpg" alt="Meal 2" class="slide">
+        <img src="campanadish3.jpg" alt="Meal 3" class="slide">
+      </div>
+      <h3>La Campana Cafe</h3>
+      <p>Brgy. Dopaj</p>
+      <span>Dupax del Sur</span>
+    </div>
+    <div class="card">
+      <div class="image-container">
+        <img src="hunger1.jpg" alt="Meal 1" class="slide active">
+        <img src="hunger2.jpg" alt="Meal 2" class="slide">
+        <img src="hunger3.jpg" alt="Meal 3" class="slide">
+      </div>
+      <h3>Hunger Station</h3>
+      <p>Brgy. Dopaj</p>
+      <span>Dupax del Sur</span>
+    </div>
+     <div class="card">
+      <div class="image-container">
+        <img src="mysterious1.jpg" alt="Meal 1" class="slide active">
+        <img src="mysterious2.jpg" alt="Meal 2" class="slide">
+        <img src="mysterious3.jpg" alt="Meal 3" class="slide">
+      </div>
+      <h3>Mysterious Cafe</h3>
+      <p>Brgy. Domang</p>
+      <span>Dupax del Sur</span>
+    </div>
+     <div class="card">
+      <div class="image-container">
+        <img src="mavves1.jpg" alt="Meal 1" class="slide active">
+        <img src="mavves2.jpg" alt="Meal 2" class="slide">
+        <img src="mavves3.jpg" alt="Meal 3" class="slide">
+      </div>
+      <h3>Mavves Paluto</h3>
+      <p>Brgy. Domang</p>
+      <span>Dupax del Sur</span>
+    </div>
+     <div class="card">
+      <div class="image-container">
+        <img src="green1.jpg" alt="Meal 1" class="slide active">
+        <img src="green2.jpg" alt="Meal 2" class="slide">
+        <img src="green3.jpg" alt="Meal 3" class="slide">
+      </div>
+      <h3>The Green Oasis of Dupax</h3>
+      <p>Brgy. Mangayang</p>
+      <span>Dupax del Sur</span>
+    </div>
+     <div class="card">
+      <div class="image-container">
+        <img src="diego1.jpg" alt="Meal 1" class="slide active">
+        <img src="diego2.jpg" alt="Meal 2" class="slide">
+        <img src="diego3.jpg" alt="Meal 3" class="slide">
+      </div>
+      <h3>Diego's Place</h3>
+      <p>Brgy. Dopaj</p>
+      <span>Dupax del Sur</span>
+    </div>
+    <div class="card">
+      <div class="image-container">
+        <img src="jasper1.jpg" alt="Meal 1" class="slide active">
+        <img src="jasper2.jpg" alt="Meal 2" class="slide">
+        <img src="jasper3.jpg" alt="Meal 3" class="slide">
+      </div>
+      <h3>Jasper's Pancitan</h3>
+      <p>Brgy. Dopaj</p>
+      <span>Dupax del Sur</span>
+    </div>
+  </div>
+  <script>
+    const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+  let slides = card.querySelectorAll(".slide");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 3000);
+});
+  </script>
+</body>
+</html>

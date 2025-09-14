@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dupax del Sur Tourism</title>
+  <link rel="stylesheet" href="sites.css">
+</head>
+<body>
+
+  <div class="carousel-container">
+   
+    <div class="gradient-overlay"></div>
+
+
+    <button class="back-button" onclick="history.back()">← Back</button>
+
+ 
+    <div class="carousel" id="carousel">
+      <img src="vicente1.jpg" alt="Image 1">
+      <img src="vicente2.jpg" alt="Image 2">
+      <img src="vicente3.jpg" alt="Image 3">
+    </div>
+
+    <div class="overlay-text">Mt. San Vicente</div>
+    <div class="dots" id="dots"></div>
+  </div>
+
+
+  <div class="bottom-bg"></div>
+  <div class="description">
+    <div class="title">A Closer Look</div>
+    <p>Mt. San Vicente is a scenic destination in Dupax del Sur, known for its 600-step footpath trail that leads visitors to its summit. The climb offers both a physical challenge and a rewarding experience, as each step brings breathtaking views of the surrounding landscapes. At the peak, visitors are greeted with panoramic sights of the town, rolling hills, and lush greenery—making the journey both a test of endurance and a moment of reflection. Mt. San Vicente is not only a place for adventure and nature appreciation, but also a site of peace, attracting hikers and sightseers alike.</p>
+  </div>
+
+ <div class="icon-bar">
+  <img src="dish.png" alt="icon1">
+  <img src="environment.png" alt="icon2">
+  <img src="picnic.png" alt="icon3">
+  <img src="binocular.png" alt="icon4">
+ </div>
+ <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7071.559132948269!2d121.08894860000001!3d16.271141099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3390590a6ca75189%3A0xf8f3b66f6af2392d!2sMt.%20San%20Vicente%20View%20Deck%20(Mt.%20Isinai)!5e1!3m2!1sen!2sph!4v1757683603567!5m2!1sen!2sph" 
+    width="100%" 
+    height="350" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+  <script>
+  const carousel = document.getElementById("carousel");
+  const images = carousel.querySelectorAll("img");
+  const dotsContainer = document.getElementById("dots");
+
+  let index = 0;
+
+  images.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      index = i;
+      updateCarousel();
+      resetAutoSlide(); 
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  function updateCarousel() {
+    carousel.style.transform = `translateX(${-index * 100}%)`;
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+  }
+
+  function nextSlide() {
+    index = (index + 1) % images.length; 
+    updateCarousel();
+  }
+
+  let autoSlide = setInterval(nextSlide, 3000);
+
+  function resetAutoSlide() {
+    clearInterval(autoSlide);
+    autoSlide = setInterval(nextSlide, 3000);
+  }
+</script>
+
+
+</body>
+</html>
