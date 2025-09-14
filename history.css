@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&family=Cinzel+Decorative:wght@400;700&display=swap'); /* Example fonts - you'll need to find exact matches or similar */
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex; 
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #232e3f;
+}
+
+
+.main-container {
+    width: 350px; 
+    background-color: #232e3f; 
+    color: #f0f0f0; 
+    overflow: hidden;
+    position: relative; 
+    padding-bottom: 50px; 
+}
+
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 350px; 
+    overflow: hidden; 
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px; 
+    background-color: #232e3f; 
+}
+ 
+.hero-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; 
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+
+}
+
+.hero-text-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2; 
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 120px;
+}
+
+.hero-text-overlay h1 {
+    font-family: 'Cinzel Decorative', serif; 
+    font-size: 1.8em;
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.hero-text-overlay h2.tracing {
+    font-family: 'Playfair Display', serif; 
+    font-size: 2.5em;
+    margin-top: 0;
+    line-height: 0.8; 
+    color: #fff;
+}
+
+.hero-text-overlay h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    color: #3dd37b;
+    letter-spacing: 2px;
+    margin-top: 0;
+}
+
+.separator {
+    width: 50px;
+    height: 1px;
+    background-color: #3dd37b;
+    margin: 20px auto 10px auto;
+}
+
+.enter-now {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    color: #aaa;
+    letter-spacing: 1px;
+}
+
+.gallery-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px; 
+    margin: 40px 0;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.description-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #aaa;
+    margin: 40px 20px;
+    line-height: 1.6;
+}
+
+.back-button {
+    position: fixed;      
+    top: 10px;            
+    left: 10px;           
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    z-index: 9999;       
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+
+@media (max-width: 400px) {
+    .main-container {
+        width: 100%; 
+    }
+}
